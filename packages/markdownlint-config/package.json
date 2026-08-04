@@ -1,6 +1,6 @@
 {
   "name": "build-loop-markdownlint-config",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "index.json",
   "description": "前端 文档规范",
   "keywords": [
@@ -28,5 +28,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "gitHead": "0a82ff570f0da4034cbe6739e3b1fbdbe7bea0f2"
+  "gitHead": "b79721e2f07d4d0baa5a82ce89f0ec46d879ef97"
 }

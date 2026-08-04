@@ -1,6 +1,6 @@
 {
   "name": "build-loop-commitlint-config",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "index.js",
   "description": "前端 Git规范",
   "keywords": [
@@ -21,5 +21,5 @@
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"
   },
-  "gitHead": "0a82ff570f0da4034cbe6739e3b1fbdbe7bea0f2"
+  "gitHead": "b79721e2f07d4d0baa5a82ce89f0ec46d879ef97"
 }

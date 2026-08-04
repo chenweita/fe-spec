@@ -1,6 +1,6 @@
 {
   "name": "build-loop-stylelint-config",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "前端 CSS规范",
   "main": "index.js",
   "keywords": [
@@ -30,5 +30,5 @@
   "bugs": {
     "url": "https://github.com/encode-studio-fe/fe-spec/issues"
   },
-  "gitHead": "0a82ff570f0da4034cbe6739e3b1fbdbe7bea0f2"
+  "gitHead": "b79721e2f07d4d0baa5a82ce89f0ec46d879ef97"
 }
