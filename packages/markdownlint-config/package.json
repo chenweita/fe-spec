@@ -1,6 +1,6 @@
 {
   "name": "build-loop-markdownlint-config",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.json",
   "description": "前端 文档规范",
   "keywords": [
@@ -8,7 +8,6 @@
     "markdown",
     "lint"
   ],
-  
   "author": "huahua",
   "homepage": "https://github.com/encode-studio-fe/fe-spec#readme",
   "license": "ISC",
@@ -22,9 +21,12 @@
   "peerDependencies": {
     "markdownlint": "^0.28.1"
   },
-  "files": ["index.json"],
+  "files": [
+    "index.json"
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  }
+  },
+  "gitHead": "0a82ff570f0da4034cbe6739e3b1fbdbe7bea0f2"
 }
