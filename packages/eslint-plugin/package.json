@@ -1,6 +1,6 @@
 {
   "name": "build-loop-eslint-plugin",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "教育自定义eslint插件",
   "scripts": {
     "test": "jest",
@@ -35,5 +35,5 @@
     "eslint": "^8.7.0",
     "jest": "^26.6.3"
   },
-  "gitHead": "b79721e2f07d4d0baa5a82ce89f0ec46d879ef97"
+  "gitHead": "8bb820476b62391e8893a9682793ac58d4065f26"
 }

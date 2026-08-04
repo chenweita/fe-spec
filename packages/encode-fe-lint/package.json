@@ -1,16 +1,15 @@
 {
   "name": "build-loop-lint",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "教育前端编码规范工程化标准脚手架",
   "bin": "./lib/cli.js",
   "main": "./lib/index.js",
   "scripts": {
     "dev": "npm run copyfiles && tsc -w",
-    "build": "rm -rf lib && npm run copyfiles && tsc",
-    "copyfiles": "copyfiles -a -u 1 \"src/config/**\" lib",
+    "build": "rm -rf lib && pnpm exec copyfiles -a -u 1 \"src/config/**\" lib && pnpm exec tsc",
     "test": "npm run build && jest",
     "coverage": "nyc jest --silent --forceExit",
-    "prepublishOnly": "npm run test"
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "lib/"
@@ -47,10 +46,10 @@
     "@commitlint/cli": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "build-loop-commitlint-config": "^2.0.2",
-    "build-loop-eslint-config": "^2.0.2",
-    "build-loop-markdownlint-config": "^2.0.2",
-    "build-loop-stylelint-config": "^2.0.2",
+    "build-loop-commitlint-config": "^2.0.3",
+    "build-loop-eslint-config": "^2.0.3",
+    "build-loop-markdownlint-config": "^2.0.3",
+    "build-loop-stylelint-config": "^2.0.3",
     "chalk": "^4.1.0",
     "command-exists": "^1.2.9",
     "commander": "^6.2.1",
@@ -95,5 +94,5 @@
   "bugs": {
     "url": "https://github.com/encode-studio-fe/fe-spec/issues"
   },
-  "gitHead": "b79721e2f07d4d0baa5a82ce89f0ec46d879ef97"
+  "gitHead": "8bb820476b62391e8893a9682793ac58d4065f26"
 }
