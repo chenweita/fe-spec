@@ -1,6 +1,6 @@
 {
   "name": "@buildloop/lint",
-  "version": "2.0.7",
+  "version": "2.0.8-beta.0",
   "description": "教育前端编码规范工程化标准脚手架",
   "bin": "./lib/cli.js",
   "main": "./lib/index.js",
