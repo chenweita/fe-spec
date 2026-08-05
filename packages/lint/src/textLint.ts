@@ -290,8 +290,8 @@ function runPrettier(code: string, fileType: FileType): string | undefined {
 
   try {
     // 复用项目中的 prettier 配置（如果存在），否则使用默认配置
-    const filePath = path.join(process.cwd(), `__buildloop_textlint__${getExtByType(fileType)}`);
-    const options = prettier.resolveConfig.sync(filePath) || {};
+    const filepath = path.join(process.cwd(), `__buildloop_textlint__${getExtByType(fileType)}`);
+    const options = prettier.resolveConfig.sync(filepath) || {};
     return prettier.format(code, { ...options, parser, filepath });
   } catch {
     // prettier 格式化失败不影响主流程
