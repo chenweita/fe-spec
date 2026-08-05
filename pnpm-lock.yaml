@@ -70,7 +70,7 @@ importers:
         specifier: ^4.5.0
         version: 4.6.3
 
-  packages/encode-fe-lint:
+  packages/@buildloop/lint:
     dependencies:
       '@babel/core':
         specifier: ^7.16.0
