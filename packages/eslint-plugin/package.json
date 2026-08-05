@@ -1,6 +1,6 @@
 {
   "name": "@buildloop/eslint-plugin",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "教育自定义eslint插件",
   "scripts": {
     "test": "jest",
@@ -22,7 +22,7 @@
   "license": "ISC",
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
@@ -38,10 +38,6 @@
   "devDependencies": {
     "eslint": "^8.7.0",
     "jest": "^26.6.3"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
   },
   "gitHead": "8bb820476b62391e8893a9682793ac58d4065f26"
 }
