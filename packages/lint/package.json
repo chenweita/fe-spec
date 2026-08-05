@@ -16,7 +16,8 @@
     "build": "rm -rf lib && pnpm exec copyfiles -a -u 1 \"src/config/**\" lib && pnpm exec tsc",
     "test": "npm run build && jest",
     "coverage": "nyc jest --silent --forceExit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "publish-beta": "npm publish --tag beta"
   },
   "files": [
     "lib/"
@@ -50,10 +51,10 @@
     "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.16.3",
     "@babel/preset-react": "^7.16.0",
-    "@buildloop/commitlint-config": "workspace:^2.0.7",
-    "@buildloop/eslint-config": "workspace:^2.0.7",
-    "@buildloop/markdownlint-config": "workspace:^2.0.7",
-    "@buildloop/stylelint-config": "workspace:^2.0.7",
+    "@buildloop/commitlint-config": "2.0.7",
+    "@buildloop/eslint-config": "2.0.7",
+    "@buildloop/markdownlint-config": "2.0.7",
+    "@buildloop/stylelint-config": "2.0.7",
     "@commitlint/cli": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
@@ -82,6 +83,7 @@
     "lodash": "^4.17.20",
     "markdownlint": "^0.25.1",
     "markdownlint-rule-helpers": "^0.13.0",
+    "memfs": "^4.67.0",
     "ora": "^5.1.0",
     "prettier": "^2.2.1",
     "strip-ansi": "^6.0.0",
