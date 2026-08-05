@@ -1,5 +1,5 @@
 {
-  "name": "build-loop-spec",
+  "name": "@buildloop/spec",
   "private": true,
   "description": "前端--前端编码规范工程化",
   "scripts": {

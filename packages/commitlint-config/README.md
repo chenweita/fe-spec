@@ -1,4 +1,4 @@
-# `build-loop-commitlint-config`
+# `@buildloop/commitlint-config`
 
 > 前端 Git 规范
 
@@ -9,7 +9,7 @@
 使用时，需要安装 [@commitlint/cli](https://www.npmjs.com/package/@commitlint/cli)：
 
 ```bash
-npm install build-loop-commitlint-config @commitlint/cli --save-dev
+npm install @buildloop/commitlint-config @commitlint/cli --save-dev
 ```
 
 ## 使用
@@ -18,7 +18,7 @@ npm install build-loop-commitlint-config @commitlint/cli --save-dev
 
 ```javascript
 module.exports = {
-	extends: ['build-loop-commitlint-config'],
+	extends: ['@buildloop/commitlint-config'],
 };
 ```
 

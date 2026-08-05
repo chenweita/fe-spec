@@ -1,4 +1,4 @@
-# build-loop-markdownlint-config
+# @buildloop/markdownlint-config
 
 > 前端 文档 规范
 
@@ -9,7 +9,7 @@
 需要先行安装 [markdownlint](https://www.npmjs.com/package/markdownlint)：
 
 ```bash
-npm install build-loop-markdownlint-config markdownlint --save-dev
+npm install @buildloop/markdownlint-config markdownlint --save-dev
 ```
 
 ## 使用
@@ -18,6 +18,6 @@ npm install build-loop-markdownlint-config markdownlint --save-dev
 
 ```json
 {
-	"extends": "build-loop-markdownlint-config"
+	"extends": "@buildloop/markdownlint-config"
 }
 ```

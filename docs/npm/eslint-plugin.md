@@ -1,5 +1,5 @@
 ---
-title: build-loop-eslint-plugin
+title: @buildloop/eslint-plugin
 categories:
   - 工程规范
 tags:
@@ -9,12 +9,12 @@ author:
   link: https://github.com/encode-studio-fe/fe-spec
 ---
 
-# build-loop-eslint-plugin
+# @buildloop/eslint-plugin
 
 除了本包，你需要同时安装 [ESlint](https://eslint.org/)
 
 ```shell
-$ npm install build-loop-eslint-plugin eslint --save-dev
+$ npm install @buildloop/eslint-plugin eslint --save-dev
 ```
 
 ## 使用
@@ -24,9 +24,9 @@ $ npm install build-loop-eslint-plugin eslint --save-dev
 ```js
 // .eslintrc.js
 module.exports = {
-  plugin: ['build-loop-eslint-config'],
+  plugin: ['@buildloop/eslint-config'],
   rules: {
-    'build-loop-eslint-plugin/no-secret-info': 'error',
+    '@buildloop/eslint-plugin/no-secret-info': 'error',
   },
 };
 ```
@@ -36,7 +36,7 @@ module.exports = {
 ```js
 // .eslintrc.js
 module.exports = {
-  extends: 'plugin:build-loop-eslint-plugin/recommended',
+  extends: 'plugin:@buildloop/eslint-plugin/recommended',
 };
 ```
 

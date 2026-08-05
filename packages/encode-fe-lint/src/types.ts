@@ -45,7 +45,7 @@ export interface ScanOptions {
   fix?: boolean;
   // 生成报告文件
   outputReport?: boolean;
-  // scan 时指定 build-loop-lint config，优先级高于 build-loop-lint.config.js
+  // scan 时指定 @buildloop/lint config，优先级高于 @buildloop/lint.config.js
   config?: Config;
 }
 
@@ -74,7 +74,7 @@ export interface ScanReport {
 
 export interface InitOptions {
   cwd: string;
-  // 是否检查并升级 build-loop-lint 的版本
+  // 是否检查并升级 @buildloop/lint 的版本
   checkVersionUpdate: boolean;
   // 是否需要自动重写 lint 配置
   rewriteConfig?: boolean;

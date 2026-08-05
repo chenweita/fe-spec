@@ -38,15 +38,15 @@
 
 | 规范                                                              | Lint 工具                                                      | npm 包                                                                                       |
 | ----------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| JavaScript 编码规范 <br/> TypeScript 编码规范 <br/> Node 编码规范 | [ESLint](https://eslint.org/)                                  | [build-loop-eslint-config](https://www.npmjs.com/package/build-loop-eslint-config)             |
-| CSS 编码规范                                                      | [stylelint](https://stylelint.io/)                             | [build-loop-stylelint-config](https://www.npmjs.com/package/build-loop-stylelint-config)       |
-| Git 规范                                                          | [commitlint](https://commitlint.js.org/#/)                     | [build-loop-commitlint-config](https://www.npmjs.com/package/build-loop-commitlint-config)     |
-| 文档规范                                                          | [markdownlint](https://github.com/DavidAnson/markdownlint)     | [build-loop-markdownlint-config](https://www.npmjs.com/package/build-loop-markdownlint-config) |
-| Eslint 插件                                                       | [ESlint Plugin](https://eslint.org/docs/latest/extend/plugins) | [build-loop-eslint-plugin](https://www.npmjs.com/package/build-loop-eslint-plugin)             |
+| JavaScript 编码规范 <br/> TypeScript 编码规范 <br/> Node 编码规范 | [ESLint](https://eslint.org/)                                  | [@buildloop/eslint-config](https://www.npmjs.com/package/@buildloop/eslint-config)             |
+| CSS 编码规范                                                      | [stylelint](https://stylelint.io/)                             | [@buildloop/stylelint-config](https://www.npmjs.com/package/@buildloop/stylelint-config)       |
+| Git 规范                                                          | [commitlint](https://commitlint.js.org/#/)                     | [@buildloop/commitlint-config](https://www.npmjs.com/package/@buildloop/commitlint-config)     |
+| 文档规范                                                          | [markdownlint](https://github.com/DavidAnson/markdownlint)     | [@buildloop/markdownlint-config](https://www.npmjs.com/package/@buildloop/markdownlint-config) |
+| Eslint 插件                                                       | [ESlint Plugin](https://eslint.org/docs/latest/extend/plugins) | [@buildloop/eslint-plugin](https://www.npmjs.com/package/@buildloop/eslint-plugin)             |
 
-[build-loop-lint](https://www.npmjs.com/package/build-loop-lint) 收敛屏蔽了上述依赖和配置细节，提供简单的 `CLI` 和 `Node.js API`，让项目能够一键接入、一键扫描、一键修复、一键升级，并为项目配置 git commit 卡口，降低项目接入规范的成本。
+[@buildloop/lint](https://www.npmjs.com/package/@buildloop/lint) 收敛屏蔽了上述依赖和配置细节，提供简单的 `CLI` 和 `Node.js API`，让项目能够一键接入、一键扫描、一键修复、一键升级，并为项目配置 git commit 卡口，降低项目接入规范的成本。
 
-您可以使用[build-loop-lint](https://www.npmjs.com/package/build-loop-lint) 方便地为项目接入全部规范。
+您可以使用[@buildloop/lint](https://www.npmjs.com/package/@buildloop/lint) 方便地为项目接入全部规范。
 
 ## 其他
 

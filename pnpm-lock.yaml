@@ -70,7 +70,7 @@ importers:
         specifier: ^4.5.0
         version: 4.6.3
 
-  packages/build-loop-lint:
+  packages/encode-fe-lint:
     dependencies:
       '@babel/core':
         specifier: ^7.16.0
@@ -81,6 +81,9 @@ importers:
       '@babel/preset-react':
         specifier: ^7.16.0
         version: 7.29.7(@babel/core@7.29.7)
+      '@buildloop/markdownlint-config':
+        specifier: workspace:^1.0.0
+        version: link:../markdownlint-config
       '@commitlint/cli':
         specifier: ^16.0.0
         version: 16.3.0
@@ -90,6 +93,15 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^5.0.0
         version: 5.62.0(eslint@8.57.1)(typescript@4.9.5)
+      @buildloop/commitlint-config:
+        specifier: workspace:^2.0.2
+        version: link:../commitlint-config
+      @buildloop/eslint-config:
+        specifier: workspace:^2.0.3
+        version: link:../eslint-config
+      @buildloop/stylelint-config:
+        specifier: workspace:^2.0.3
+        version: link:../stylelint-config
       chalk:
         specifier: ^4.1.0
         version: 4.1.2
@@ -105,18 +117,6 @@ importers:
       ejs:
         specifier: ^3.1.5
         version: 3.1.10
-      build-loop-commitlint-config:
-        specifier: ^1.0.0
-        version: 1.0.0
-      build-loop-eslint-config:
-        specifier: ^1.0.0
-        version: 1.0.0
-      build-loop-markdownlint-config:
-        specifier: ^1.0.0
-        version: 1.0.0(markdownlint@0.25.1)
-      build-loop-stylelint-config:
-        specifier: ^1.0.0
-        version: 1.0.8(stylelint-scss@4.7.0(stylelint@14.16.1))(stylelint@14.16.1)
       eslint:
         specifier: ^8.7.0
         version: 8.57.1
@@ -3955,23 +3955,6 @@ packages:
   emojis-list@3.0.0:
     resolution: {integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==}
     engines: {node: '>= 4'}
-
-  build-loop-commitlint-config@1.0.0:
-    resolution: {integrity: sha512-cvX1j1LwozoNCn84Jsft7QAN74YNqEj3N/f/kbekmZhYugKh4cR6bsnfGwxZ0G7ZfLrhf9Db5Pw+pzuQUnFpxQ==}
-
-  build-loop-eslint-config@1.0.0:
-    resolution: {integrity: sha512-3fT7M/Y1P4Y9Dadv12rFt0oV6jMFvbksZmFDkl8Vhcm/v8xh2IAykyhuKFsKXw0KiyPYolqU9NnsUhGadqL9hQ==}
-
-  build-loop-markdownlint-config@1.0.0:
-    resolution: {integrity: sha512-doZW1YAEnPhxJaTxeP5+Ups3GAWPNb3Z58Eq2q+lmnOYkrCGkToqvCUuUymCRLabspnm0SFYwDMrjKGAXjIpvA==}
-    peerDependencies:
-      markdownlint: ^0.28.1
-
-  build-loop-stylelint-config@1.0.8:
-    resolution: {integrity: sha512-oFUlp7u0wD1oEaQSBc1dJJHsKdEC7UA8Slwyvqad6iAG1vATZR8VFDbEOmBrUR2xXe1+30QAfCcZOooVV5IifA==}
-    peerDependencies:
-      stylelint: '>=8.3.0'
-      stylelint-scss: '>=2.0.0'
 
   encodeurl@2.0.0:
     resolution: {integrity: sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==}
@@ -10541,14 +10524,14 @@ snapshots:
       '@commitlint/types': 17.8.1
       '@types/node': 20.5.1
       chalk: 4.1.2
-      cosmiconfig: 8.3.6(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.9.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig: 8.3.6(typescript@4.9.5)
+      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@4.9.5))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@4.9.5)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.2(@types/node@20.5.1)(typescript@5.9.3)
-      typescript: 5.9.3
+      ts-node: 10.9.2(@types/node@20.5.1)(typescript@4.9.5)
+      typescript: 4.9.5
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -11076,7 +11059,7 @@ snapshots:
       '@types/istanbul-lib-coverage': 2.0.6
       collect-v8-coverage: 1.0.3
 
-  '@jest/test-sequencer@26.6.3':
+  '@jest/test-sequencer@26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))':
     dependencies:
       '@jest/test-result': 26.6.2
       graceful-fs: 4.2.11
@@ -11084,7 +11067,11 @@ snapshots:
       jest-runner: 26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))
       jest-runtime: 26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - supports-color
+      - ts-node
+      - utf-8-validate
 
   '@jest/test-sequencer@27.5.1':
     dependencies:
@@ -11215,7 +11202,7 @@ snapshots:
 
   '@lerna/child-process@6.6.2':
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       execa: 5.1.1
       strong-log-transformer: 2.1.0
 
@@ -13906,12 +13893,12 @@ snapshots:
       - '@swc/core'
       - '@swc/wasm'
 
-  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.9.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@4.9.5))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@4.9.5):
     dependencies:
       '@types/node': 20.5.1
-      cosmiconfig: 8.3.6(typescript@5.9.3)
+      cosmiconfig: 8.3.6(typescript@4.9.5)
       ts-node: 10.9.2(@types/node@20.5.1)(typescript@5.9.3)
-      typescript: 5.9.3
+      typescript: 4.9.5
 
   cosmiconfig@5.2.1:
     dependencies:
@@ -13936,14 +13923,14 @@ snapshots:
       path-type: 4.0.0
       yaml: 1.10.3
 
-  cosmiconfig@8.3.6(typescript@5.9.3):
+  cosmiconfig@8.3.6(typescript@4.9.5):
     dependencies:
       import-fresh: 3.3.1
       js-yaml: 4.3.1
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 4.9.5
 
   create-ecdh@4.0.4:
     dependencies:
@@ -14500,21 +14487,6 @@ snapshots:
   emojis-list@2.1.0: {}
 
   emojis-list@3.0.0: {}
-
-  build-loop-commitlint-config@1.0.0:
-    dependencies:
-      conventional-changelog-conventionalcommits: 4.6.3
-
-  build-loop-eslint-config@1.0.0: {}
-
-  build-loop-markdownlint-config@1.0.0(markdownlint@0.25.1):
-    dependencies:
-      markdownlint: 0.25.1
-
-  build-loop-stylelint-config@1.0.8(stylelint-scss@4.7.0(stylelint@14.16.1))(stylelint@14.16.1):
-    dependencies:
-      stylelint: 14.16.1
-      stylelint-scss: 4.7.0(stylelint@14.16.1)
 
   encodeurl@2.0.0: {}
 
@@ -15594,7 +15566,7 @@ snapshots:
       '@hutson/parse-repository-url': 3.0.2
       hosted-git-info: 4.1.0
       through2: 2.0.5
-      yargs: 16.2.0
+      yargs: 16.2.2
 
   get-port@5.1.1: {}
 
@@ -15689,7 +15661,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.5
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -15698,7 +15670,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.4
+      minimatch: 3.1.5
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -16787,7 +16759,7 @@ snapshots:
   jest-config@26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3)):
     dependencies:
       '@babel/core': 7.29.7
-      '@jest/test-sequencer': 26.6.3
+      '@jest/test-sequencer': 26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))
       '@jest/types': 26.6.2
       babel-jest: 26.6.3(@babel/core@7.29.7)
       chalk: 4.1.2
@@ -16797,7 +16769,7 @@ snapshots:
       jest-environment-jsdom: 26.6.2
       jest-environment-node: 26.6.2
       jest-get-type: 26.3.0
-      jest-jasmine2: 26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))
+      jest-jasmine2: 26.6.3
       jest-regex-util: 26.0.0
       jest-resolve: 26.6.2
       jest-util: 26.6.2
@@ -17050,7 +17022,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  jest-jasmine2@26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3)):
+  jest-jasmine2@26.6.3:
     dependencies:
       '@babel/traverse': 7.29.8
       '@jest/environment': 26.6.2
@@ -17071,11 +17043,7 @@ snapshots:
       pretty-format: 26.6.2
       throat: 5.0.0
     transitivePeerDependencies:
-      - bufferutil
-      - canvas
       - supports-color
-      - ts-node
-      - utf-8-validate
 
   jest-jasmine2@27.5.1:
     dependencies:
@@ -18555,7 +18523,7 @@ snapshots:
       array-differ: 3.0.0
       array-union: 2.1.0
       arrify: 2.0.1
-      minimatch: 3.0.5
+      minimatch: 3.1.5
 
   mute-stream@0.0.8: {}
 
@@ -18879,7 +18847,7 @@ snapshots:
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.6
       axios: 1.19.0
-      chalk: 4.1.0
+      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
       cliui: 7.0.4
@@ -21094,6 +21062,24 @@ snapshots:
       yn: 3.1.1
     optional: true
 
+  ts-node@10.9.2(@types/node@20.5.1)(typescript@4.9.5):
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.12
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 20.5.1
+      acorn: 8.18.0
+      acorn-walk: 8.3.5
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.4
+      make-error: 1.3.6
+      typescript: 4.9.5
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+
   ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
@@ -21965,7 +21951,7 @@ snapshots:
 
   write-file-atomic@2.4.3:
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
 
@@ -22090,7 +22076,7 @@ snapshots:
       require-directory: 2.1.1
       string-width: 4.2.3
       y18n: 5.0.8
-      yargs-parser: 20.2.4
+      yargs-parser: 20.2.9
 
   yargs@16.2.2:
     dependencies:

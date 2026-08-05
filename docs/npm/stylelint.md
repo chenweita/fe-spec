@@ -1,5 +1,5 @@
 ---
-title: build-loop-stylelint-config
+title: @buildloop/stylelint-config
 categories:
   - 工程规范
 tags:
@@ -9,7 +9,7 @@ author:
   link: https://github.com/encode-studio-fe/fe-spec
 ---
 
-# build-loop-stylelint-config
+# @buildloop/stylelint-config
 
 :::tip
 前端 CSS 规范
@@ -22,7 +22,7 @@ author:
 需要先行安装 [stylelint](https://www.npmjs.com/package/stylelint) 和 [stylelint-scss](https://www.npmjs.com/package/stylelint-scss)：
 
 ```bash
-npm install build-loop-stylelint-config stylelint stylelint-scss --save-dev
+npm install @buildloop/stylelint-config stylelint stylelint-scss --save-dev
 ```
 
 ## 使用
@@ -31,6 +31,6 @@ npm install build-loop-stylelint-config stylelint stylelint-scss --save-dev
 
 ```json
 {
-  "extends": "build-loop-stylelint-config"
+  "extends": "@buildloop/stylelint-config"
 }
 ```

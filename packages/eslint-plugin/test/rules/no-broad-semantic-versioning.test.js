@@ -8,7 +8,7 @@ ruleTester.run('no-broad-semantic-versioning', rule, {
     {
       filename: 'package.json',
       code: `module.exports = ${JSON.stringify({
-        devDependencies: { 'build-loop-eslint-plugin': '^0.0.5' },
+        devDependencies: { '@buildloop/eslint-plugin': '^0.0.5' },
       })}`,
     },
     {
@@ -21,11 +21,11 @@ ruleTester.run('no-broad-semantic-versioning', rule, {
     {
       filename: 'package.json',
       code: `module.exports = ${JSON.stringify({
-        devDependencies: { 'build-loop-eslint-plugin': '*' },
+        devDependencies: { '@buildloop/eslint-plugin': '*' },
       })}`,
       errors: [
         {
-          message: 'The "build-loop-eslint-plugin" is not recommended to use "*"',
+          message: 'The "@buildloop/eslint-plugin" is not recommended to use "*"',
         },
       ],
     },

@@ -1,5 +1,5 @@
 {
-  "name": "build-loop-lint",
+  "name": "@buildloop/lint",
   "version": "2.0.3",
   "description": "教育前端编码规范工程化标准脚手架",
   "bin": "./lib/cli.js",
@@ -46,10 +46,10 @@
     "@commitlint/cli": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "build-loop-commitlint-config": "^2.0.3",
-    "build-loop-eslint-config": "^2.0.3",
-    "build-loop-markdownlint-config": "^2.0.3",
-    "build-loop-stylelint-config": "^2.0.3",
+    "@buildloop/commitlint-config": "workspace:^2.0.2",
+    "@buildloop/eslint-config": "workspace:^2.0.3",
+    "@buildloop/markdownlint-config": "workspace:^1.0.0",
+    "@buildloop/stylelint-config": "workspace:^2.0.3",
     "chalk": "^4.1.0",
     "command-exists": "^1.2.9",
     "commander": "^6.2.1",
@@ -87,6 +87,10 @@
   "author": "huahua",
   "homepage": "https://github.com/encode-studio-fe/fe-spec#readme",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chenweita/fe-spec.git"

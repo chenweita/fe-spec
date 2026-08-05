@@ -33,16 +33,16 @@ export default defineConfig4CustomTheme({
       {
         text: 'NPM包',
         items: [
-          { text: 'build-loop-eslint-config', link: '/npm/eslint.md' },
-          { text: 'build-loop-stylelint-config', link: '/npm/stylelint.md' },
-          { text: 'build-loop-commitlint-config', link: '/npm/commitlint.md' },
-          { text: 'build-loop-markdownlint-config', link: '/npm/markdownlint.md' },
-          { text: 'build-loop-eslint-plugin', link: '/npm/eslint-plugin.md' },
+          { text: '@buildloop/eslint-config', link: '/npm/eslint.md' },
+          { text: '@buildloop/stylelint-config', link: '/npm/stylelint.md' },
+          { text: '@buildloop/commitlint-config', link: '/npm/commitlint.md' },
+          { text: '@buildloop/markdownlint-config', link: '/npm/markdownlint.md' },
+          { text: '@buildloop/eslint-plugin', link: '/npm/eslint-plugin.md' },
         ],
       },
       {
         text: '脚手架',
-        items: [{ text: 'build-loop-lint', link: '/cli/build-loop-lint.md' }],
+        items: [{ text: '@buildloop/lint', link: '/cli/@buildloop/lint.md' }],
       },
     ],
     sidebar: [
@@ -91,16 +91,16 @@ export default defineConfig4CustomTheme({
       {
         title: 'NPM包',
         children: [
-          { title: 'build-loop-eslint-config', path: '/npm/eslint.md' },
-          { title: 'build-loop-stylelint-config', path: '/npm/stylelint.md' },
-          { title: 'build-loop-commitlint-config', path: '/npm/commitlint.md' },
-          { title: 'build-loop-markdownlint-config', path: '/npm/markdownlint.md' },
-          { title: 'build-loop-eslint-plugin', path: '/npm/eslint-plugin.md' },
+          { title: '@buildloop/eslint-config', path: '/npm/eslint.md' },
+          { title: '@buildloop/stylelint-config', path: '/npm/stylelint.md' },
+          { title: '@buildloop/commitlint-config', path: '/npm/commitlint.md' },
+          { title: '@buildloop/markdownlint-config', path: '/npm/markdownlint.md' },
+          { title: '@buildloop/eslint-plugin', path: '/npm/eslint-plugin.md' },
         ],
       },
       {
         title: '脚手架',
-        children: [{ title: 'build-loop-lint', path: '/cli/build-loop-lint.md' }],
+        children: [{ title: '@buildloop/lint', path: '/cli/@buildloop/lint.md' }],
       },
     ],
     logo: '/img/logo.png',

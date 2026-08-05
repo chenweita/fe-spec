@@ -1,7 +1,7 @@
 module.exports = {
-  plugins: ['build-loop-eslint-plugin'],
+  plugins: ['@buildloop/eslint-plugin'],
   rules: {
-    'build-loop-eslint-plugin/no-http-url': 'warn',
-    'build-loop-eslint-plugin/no-secret-info': 'error',
+    '@buildloop/eslint-plugin/no-http-url': 'warn',
+    '@buildloop/eslint-plugin/no-secret-info': 'error',
   },
 };
