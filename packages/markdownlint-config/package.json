@@ -1,8 +1,8 @@
 {
-  "name": "build-loop-markdownlint-config",
-  "version": "2.0.3",
+  "name": "@buildloop/markdownlint-config",
+  "version": "1.0.0",
   "main": "index.json",
-  "description": "前端 文档规范",
+  "description": "前端md文档规范",
   "keywords": [
     "encode",
     "markdown",
@@ -24,6 +24,7 @@
   "files": [
     "index.json"
   ],
+  "private": false,
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
