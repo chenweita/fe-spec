@@ -4,6 +4,13 @@
   "description": "教育前端编码规范工程化标准脚手架",
   "bin": "./lib/cli.js",
   "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  },
   "scripts": {
     "dev": "npm run copyfiles && tsc -w",
     "build": "rm -rf lib && pnpm exec copyfiles -a -u 1 \"src/config/**\" lib && pnpm exec tsc",

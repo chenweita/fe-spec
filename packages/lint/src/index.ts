@@ -5,6 +5,9 @@ import { PKG_NAME } from './utils/constants';
 import printReport from './utils/print-report';
 import type { InitOptions, ScanOptions } from './types';
 
+export { scanText, fixText } from './textLint';
+export type { FileType, LintMessage, LintResult, TextLintResponse, TextLintOptions } from './textLint';
+
 type IInitOptions = Omit<InitOptions, 'checkVersionUpdate'>;
 
 export const init = async (options: IInitOptions) => {
