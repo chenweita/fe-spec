@@ -47,5 +47,10 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "pnpm": {
+    "overrides": {
+      "vue-router": "3.5.4"
+    }
   }
 }
