@@ -1,5 +1,5 @@
 ---
-title: @buildloop/eslint-config
+title: "@buildloop/eslint-config"
 categories:
   - 工程规范
 tags:

@@ -1,5 +1,5 @@
 ---
-title: @buildloop/commitlint-config
+title: "@buildloop/commitlint-config"
 categories:
   - 工程规范
 tags:

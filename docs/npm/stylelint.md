@@ -1,5 +1,5 @@
 ---
-title: @buildloop/stylelint-config
+title: "@buildloop/stylelint-config"
 categories:
   - 工程规范
 tags:

@@ -1,5 +1,5 @@
 ---
-title: @buildloop/markdownlint-config
+title: "@buildloop/markdownlint-config"
 categories:
   - 工程规范
 tags:

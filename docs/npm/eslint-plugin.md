@@ -1,5 +1,5 @@
 ---
-title: @buildloop/eslint-plugin
+title: "@buildloop/eslint-plugin"
 categories:
   - 工程规范
 tags:

@@ -1,5 +1,5 @@
 ---
-title: @buildloop/lint
+title: "@buildloop/lint"
 categories:
   - 脚手架规范
 tags:
