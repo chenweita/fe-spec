@@ -42,7 +42,7 @@ export default defineConfig4CustomTheme({
       },
       {
         text: '脚手架',
-        items: [{ text: '@buildloop/lint', link: '/cli/@buildloop/lint.md' }],
+        items: [{ text: '@buildloop/lint', link: '/cli/encode-fe-lint.md' }],
       },
     ],
     sidebar: [
@@ -100,7 +100,7 @@ export default defineConfig4CustomTheme({
       },
       {
         title: '脚手架',
-        children: [{ title: '@buildloop/lint', path: '/cli/@buildloop/lint.md' }],
+        children: [{ title: '@buildloop/lint', path: '/cli/encode-fe-lint.md' }],
       },
     ],
     logo: '/img/logo.png',
