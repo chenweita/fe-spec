@@ -90,6 +90,12 @@ export interface InitOptions {
   enablePrettier?: boolean;
   // 是否禁用自动在初始化完成后安装依赖
   disableNpmInstall?: boolean;
+  // 项目框架：react | vue | rax | node | vanilla | es5（与 lang 配合使用，映射到 eslintType）
+  framework?: 'react' | 'vue' | 'rax' | 'node' | 'vanilla' | 'es5';
+  // 项目语言：typescript | javascript（与 framework 配合使用，映射到 eslintType；es5 时忽略）
+  lang?: 'typescript' | 'javascript';
+  // 跳过交互式提问，未显式传入的选项使用默认值
+  yes?: boolean;
 }
 
 export interface IGetLintConfig {

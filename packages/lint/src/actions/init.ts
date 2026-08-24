@@ -13,6 +13,45 @@ import type { InitOptions, PKG } from '../types';
 let step = 0;
 
 /**
+ * 将 framework + lang 组合映射为内部的 eslintType
+ * 映射规则参考 PROJECT_TYPES：
+ *   react   + javascript -> react
+ *   react   + typescript -> typescript/react
+ *   vue     + javascript -> vue
+ *   vue     + typescript -> typescript/vue
+ *   rax     + javascript -> rax
+ *   rax     + typescript -> typescript/rax
+ *   node    + javascript -> node
+ *   node    + typescript -> typescript/node
+ *   vanilla + javascript -> index
+ *   vanilla + typescript -> typescript
+ *   es5（不区分语言）     -> es5
+ */
+const mapEslintType = (
+  framework?: 'react' | 'vue' | 'rax' | 'node' | 'vanilla' | 'es5',
+  lang?: 'typescript' | 'javascript',
+): string | undefined => {
+  if (!framework) return undefined;
+  // es5 不区分语言
+  if (framework === 'es5') return 'es5';
+  if (!lang) return undefined;
+  const isTs = lang === 'typescript';
+  switch (framework) {
+    case 'react':
+      return isTs ? 'typescript/react' : 'react';
+    case 'vue':
+      return isTs ? 'typescript/vue' : 'vue';
+    case 'rax':
+      return isTs ? 'typescript/rax' : 'rax';
+    case 'node':
+      return isTs ? 'typescript/node' : 'node';
+    case 'vanilla':
+    default:
+      return isTs ? 'typescript' : 'index';
+  }
+};
+
+/**
  * 选择项目语言和框架
  */
 const chooseEslintType = async (): Promise<string> => {
@@ -74,6 +113,8 @@ export default async (options: InitOptions) => {
   const isTest = process.env.NODE_ENV === 'test';
   const checkVersionUpdate = options.checkVersionUpdate || false;
   const disableNpmInstall = options.disableNpmInstall || false;
+  // --yes：跳过交互式提问，未显式传入的选项使用默认值
+  const yes = options.yes === true;
   const config: Record<string, any> = {};
   const pkgPath = path.resolve(cwd, 'package.json');
   let pkg: PKG = fs.readJSONSync(pkgPath);
@@ -81,6 +122,12 @@ export default async (options: InitOptions) => {
   // 版本检查
   if (!isTest && checkVersionUpdate) {
     await update(false);
+  }
+
+  // 优先把 framework + lang 映射成 eslintType（CLI 传参场景）
+  if (!options.eslintType) {
+    const mappedType = mapEslintType(options.framework, options.lang);
+    if (mappedType) options.eslintType = mappedType;
   }
 
   // 初始化 `enableESLint`，默认为 true，无需让用户选择
@@ -93,6 +140,9 @@ export default async (options: InitOptions) => {
   // 初始化 `eslintType`
   if (options.eslintType && PROJECT_TYPES.find((choice) => choice.value === options.eslintType)) {
     config.eslintType = options.eslintType;
+  } else if (yes) {
+    // 跳过交互，使用默认值
+    config.eslintType = 'index';
   } else {
     config.eslintType = await chooseEslintType();
   }
@@ -100,6 +150,8 @@ export default async (options: InitOptions) => {
   // 初始化 `enableStylelint`
   if (typeof options.enableStylelint === 'boolean') {
     config.enableStylelint = options.enableStylelint;
+  } else if (yes) {
+    config.enableStylelint = !/node/.test(config.eslintType);
   } else {
     config.enableStylelint = await chooseEnableStylelint(!/node/.test(config.eslintType));
   }
@@ -107,6 +159,8 @@ export default async (options: InitOptions) => {
   // 初始化 `enableMarkdownlint`
   if (typeof options.enableMarkdownlint === 'boolean') {
     config.enableMarkdownlint = options.enableMarkdownlint;
+  } else if (yes) {
+    config.enableMarkdownlint = true;
   } else {
     config.enableMarkdownlint = await chooseEnableMarkdownLint();
   }
@@ -114,6 +168,8 @@ export default async (options: InitOptions) => {
   // 初始化 `enablePrettier`
   if (typeof options.enablePrettier === 'boolean') {
     config.enablePrettier = options.enablePrettier;
+  } else if (yes) {
+    config.enablePrettier = true;
   } else {
     config.enablePrettier = await chooseEnablePrettier();
   }

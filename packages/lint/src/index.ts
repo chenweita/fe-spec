@@ -8,6 +8,9 @@ import type { InitOptions, ScanOptions } from './types';
 export { scanText, fixText } from './textLint';
 export type { FileType, LintMessage, LintResult, TextLintResponse, TextLintOptions } from './textLint';
 
+export { generateScaffold, generateScaffoldToMemory } from './generate';
+export type { GenerateOpt, FileTreeNode } from './generate';
+
 type IInitOptions = Omit<InitOptions, 'checkVersionUpdate'>;
 
 export const init = async (options: IInitOptions) => {

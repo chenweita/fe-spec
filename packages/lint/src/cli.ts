@@ -46,6 +46,9 @@ program
   .command('init')
   .description('一键接入：为项目初始化规范工具和配置，可以根据项目类型和需求进行定制')
   .option('--vscode', '写入.vscode/setting.json配置')
+  .option('--framework <framework>', '项目框架：react | vue | vanilla')
+  .option('--lang <lang>', '语言：typescript | javascript')
+  .option('--yes', '跳过交互式提问，使用传入参数（未传入的选项使用默认值）')
   .action(async (cmd) => {
     if (cmd.vscode) {
       const configPath = path.resolve(cwd, `${PKG_NAME}.config.js`);
@@ -54,6 +57,9 @@ program
       await init({
         cwd,
         checkVersionUpdate: true,
+        framework: cmd.framework,
+        lang: cmd.lang,
+        yes: cmd.yes === true,
       });
     }
   });
