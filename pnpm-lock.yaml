@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  vue-router: 3.5.4
+
 importers:
 
   .:
@@ -70,7 +73,80 @@ importers:
         specifier: ^4.5.0
         version: 4.6.3
 
-  packages/@buildloop/lint:
+  packages/eslint-config:
+    devDependencies:
+      '@babel/core':
+        specifier: ^7.16.0
+        version: 7.29.7
+      '@babel/eslint-parser':
+        specifier: ^7.16.3
+        version: 7.29.7(@babel/core@7.29.7)(eslint@8.57.1)
+      '@babel/preset-react':
+        specifier: ^7.16.0
+        version: 7.29.7(@babel/core@7.29.7)
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^5.0.0
+        version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@4.9.5))(eslint@8.57.1)(typescript@4.9.5)
+      '@typescript-eslint/parser':
+        specifier: ^5.0.0
+        version: 5.62.0(eslint@8.57.1)(typescript@4.9.5)
+      eslint:
+        specifier: ^8.7.0
+        version: 8.57.1
+      eslint-config-egg:
+        specifier: ^10.0.0
+        version: 10.0.0(eslint-import-resolver-typescript@2.7.1)(eslint@8.57.1)(typescript@4.9.5)
+      eslint-import-resolver-typescript:
+        specifier: ^2.5.0
+        version: 2.7.1(eslint-plugin-import@2.32.0)(eslint@8.57.1)
+      eslint-plugin-import:
+        specifier: ^2.25.3
+        version: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@4.9.5))(eslint-import-resolver-typescript@2.7.1)(eslint@8.57.1)
+      eslint-plugin-jsx-a11y:
+        specifier: ^6.3.1
+        version: 6.10.2(eslint@8.57.1)
+      eslint-plugin-jsx-plus:
+        specifier: ^0.1.0
+        version: 0.1.0
+      eslint-plugin-react:
+        specifier: ^7.17.0
+        version: 7.37.5(eslint@8.57.1)
+      eslint-plugin-react-hooks:
+        specifier: ^4.2.0
+        version: 4.6.2(eslint@8.57.1)
+      eslint-plugin-vue:
+        specifier: ^7.3.0
+        version: 7.20.0(eslint@8.57.1)
+      lodash:
+        specifier: ^4.17.21
+        version: 4.18.1
+      mocha:
+        specifier: ^8.2.1
+        version: 8.4.0
+      typescript:
+        specifier: ^4.1.2
+        version: 4.9.5
+      vue-eslint-parser:
+        specifier: ^7.3.0
+        version: 7.11.0(eslint@8.57.1)
+
+  packages/eslint-plugin:
+    dependencies:
+      fs-extra:
+        specifier: ^9.0.1
+        version: 9.1.0
+      require-all:
+        specifier: ^3.0.0
+        version: 3.0.0
+    devDependencies:
+      eslint:
+        specifier: ^8.7.0
+        version: 8.57.1
+      jest:
+        specifier: ^26.6.3
+        version: 26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))
+
+  packages/lint:
     dependencies:
       '@babel/core':
         specifier: ^7.16.0
@@ -81,9 +157,18 @@ importers:
       '@babel/preset-react':
         specifier: ^7.16.0
         version: 7.29.7(@babel/core@7.29.7)
+      '@buildloop/commitlint-config':
+        specifier: workspace:^2.0.8
+        version: link:../commitlint-config
+      '@buildloop/eslint-config':
+        specifier: workspace:^2.0.8
+        version: link:../eslint-config
       '@buildloop/markdownlint-config':
-        specifier: workspace:^1.0.0
+        specifier: workspace:^2.0.8
         version: link:../markdownlint-config
+      '@buildloop/stylelint-config':
+        specifier: workspace:^2.0.8
+        version: link:../stylelint-config
       '@commitlint/cli':
         specifier: ^16.0.0
         version: 16.3.0
@@ -93,15 +178,6 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^5.0.0
         version: 5.62.0(eslint@8.57.1)(typescript@4.9.5)
-      @buildloop/commitlint-config:
-        specifier: workspace:^2.0.2
-        version: link:../commitlint-config
-      @buildloop/eslint-config:
-        specifier: workspace:^2.0.3
-        version: link:../eslint-config
-      @buildloop/stylelint-config:
-        specifier: workspace:^2.0.3
-        version: link:../stylelint-config
       chalk:
         specifier: ^4.1.0
         version: 4.1.2
@@ -247,79 +323,6 @@ importers:
       typescript:
         specifier: ^4.6.2
         version: 4.9.5
-
-  packages/eslint-config:
-    devDependencies:
-      '@babel/core':
-        specifier: ^7.16.0
-        version: 7.29.7
-      '@babel/eslint-parser':
-        specifier: ^7.16.3
-        version: 7.29.7(@babel/core@7.29.7)(eslint@8.57.1)
-      '@babel/preset-react':
-        specifier: ^7.16.0
-        version: 7.29.7(@babel/core@7.29.7)
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^5.0.0
-        version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@4.9.5))(eslint@8.57.1)(typescript@4.9.5)
-      '@typescript-eslint/parser':
-        specifier: ^5.0.0
-        version: 5.62.0(eslint@8.57.1)(typescript@4.9.5)
-      eslint:
-        specifier: ^8.7.0
-        version: 8.57.1
-      eslint-config-egg:
-        specifier: ^10.0.0
-        version: 10.0.0(eslint-import-resolver-typescript@2.7.1)(eslint@8.57.1)(typescript@4.9.5)
-      eslint-import-resolver-typescript:
-        specifier: ^2.5.0
-        version: 2.7.1(eslint-plugin-import@2.32.0)(eslint@8.57.1)
-      eslint-plugin-import:
-        specifier: ^2.25.3
-        version: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@4.9.5))(eslint-import-resolver-typescript@2.7.1)(eslint@8.57.1)
-      eslint-plugin-jsx-a11y:
-        specifier: ^6.3.1
-        version: 6.10.2(eslint@8.57.1)
-      eslint-plugin-jsx-plus:
-        specifier: ^0.1.0
-        version: 0.1.0
-      eslint-plugin-react:
-        specifier: ^7.17.0
-        version: 7.37.5(eslint@8.57.1)
-      eslint-plugin-react-hooks:
-        specifier: ^4.2.0
-        version: 4.6.2(eslint@8.57.1)
-      eslint-plugin-vue:
-        specifier: ^7.3.0
-        version: 7.20.0(eslint@8.57.1)
-      lodash:
-        specifier: ^4.17.21
-        version: 4.18.1
-      mocha:
-        specifier: ^8.2.1
-        version: 8.4.0
-      typescript:
-        specifier: ^4.1.2
-        version: 4.9.5
-      vue-eslint-parser:
-        specifier: ^7.3.0
-        version: 7.11.0(eslint@8.57.1)
-
-  packages/eslint-plugin:
-    dependencies:
-      fs-extra:
-        specifier: ^9.0.1
-        version: 9.1.0
-      require-all:
-        specifier: ^3.0.0
-        version: 3.0.0
-    devDependencies:
-      eslint:
-        specifier: ^8.7.0
-        version: 8.57.1
-      jest:
-        specifier: ^26.6.3
-        version: 26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))
 
   packages/markdownlint-config:
     dependencies:
@@ -9191,8 +9194,8 @@ packages:
       vue-template-compiler:
         optional: true
 
-  vue-router@3.6.5:
-    resolution: {integrity: sha512-VYXZQLtjuvKxxcshuRAwjHnciqZVoXAjTjcqBTz4rKc8qih9g9pI3hbDjmqXaHdgL3v8pV6P8Z335XvHzESxLQ==}
+  vue-router@3.5.4:
+    resolution: {integrity: sha512-x+/DLAJZv2mcQ7glH2oV9ze8uPwcI+H+GgTgTmb5I55bCgY3+vXWIsqbYUzbBSZnwFHEJku4eoaH/x98veyymQ==}
     peerDependencies:
       vue: ^2
 
@@ -12240,7 +12243,7 @@ snapshots:
       url-loader: 1.1.2(webpack@4.47.0)
       vue: 2.7.16
       vue-loader: 15.11.1(@vue/compiler-sfc@3.5.40)(cache-loader@3.0.1(webpack@4.47.0))(css-loader@2.1.1(webpack@4.47.0))(ejs@3.1.10)(handlebars@4.7.9)(hogan.js@3.0.2)(lodash@4.18.1)(vue-template-compiler@2.7.16)(webpack@4.47.0)
-      vue-router: 3.6.5(vue@2.7.16)
+      vue-router: 3.5.4(vue@2.7.16)
       vue-server-renderer: 2.7.16
       vue-template-compiler: 2.7.16
       vuepress-html-webpack-plugin: 3.2.0(webpack@4.47.0)
@@ -16769,7 +16772,7 @@ snapshots:
       jest-environment-jsdom: 26.6.2
       jest-environment-node: 26.6.2
       jest-get-type: 26.3.0
-      jest-jasmine2: 26.6.3
+      jest-jasmine2: 26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))
       jest-regex-util: 26.0.0
       jest-resolve: 26.6.2
       jest-util: 26.6.2
@@ -17022,7 +17025,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  jest-jasmine2@26.6.3:
+  jest-jasmine2@26.6.3(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3)):
     dependencies:
       '@babel/traverse': 7.29.8
       '@jest/environment': 26.6.2
@@ -17043,7 +17046,11 @@ snapshots:
       pretty-format: 26.6.2
       throat: 5.0.0
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - supports-color
+      - ts-node
+      - utf-8-validate
 
   jest-jasmine2@27.5.1:
     dependencies:
@@ -21529,7 +21536,7 @@ snapshots:
       - walrus
       - whiskers
 
-  vue-router@3.6.5(vue@2.7.16):
+  vue-router@3.5.4(vue@2.7.16):
     dependencies:
       vue: 2.7.16
 
