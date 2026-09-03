@@ -1,6 +1,6 @@
 {
   "name": "@buildloop/eslint-plugin",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "教育自定义eslint插件",
   "scripts": {
     "test": "jest",
