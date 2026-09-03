@@ -1,3 +1,13 @@
+# [](https://github.com/chenweita/fe-spec/compare/v2.0.10...v) (2026-09-03)
+
+
+### Bug Fixes
+
+* remove root publish script to prevent recursive lerna publish ([f83685b](https://github.com/chenweita/fe-spec/commit/f83685b7cefa249d27edc7dc104f96a04b4836b8))
+* set commit-msg hook as executable and fix CRLF line endings ([0dc4788](https://github.com/chenweita/fe-spec/commit/0dc47888950e076dc0a73f6431d98bb945ab60a6))
+
+
+
 # [](https://github.com/encode-studio-fe/fe-spec/compare/v0.0.6...v) (2023-06-11)
 
 
