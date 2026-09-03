@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: 前端
-tagline: 前端编码规范工程化
+tagline: 前端编码规范工程化测试
 actionText: 立刻进入 →
 actionLink: /coding/html.md
 
@@ -38,7 +38,7 @@ features:
 
 我们引入了多个业界流行的 `Linter` 作为规范文档的配套工具，并根据规范内容定制了对应的规则包，它们包括：
 
-| 规范                                                              | Lint 工具                                                      | NPM 包                                                                                       |
+| 规范                                                              | Lint 工具                                                      | npm 包                                                                                       |
 | ----------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | JavaScript 编码规范 <br/> TypeScript 编码规范 <br/> Node 编码规范 | [ESLint](https://eslint.org/)                                  | [@buildloop/eslint-config](https://www.npmjs.com/package/@buildloop/eslint-config)             |
 | CSS 编码规范                                                      | [stylelint](https://stylelint.io/)                             | [@buildloop/stylelint-config](https://www.npmjs.com/package/@buildloop/stylelint-config)       |

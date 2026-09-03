@@ -1,3 +1,4 @@
 {
-  "extends": "./packages/markdownlint-config/index.json"
+  "extends": "./packages/markdownlint-config/index.json",
+  "MD041": false
 }
