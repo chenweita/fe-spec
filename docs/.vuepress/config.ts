@@ -28,6 +28,7 @@ export default defineConfig4CustomTheme({
           { text: 'Git 规范', link: '/engineering/git.md' },
           { text: '文档规范', link: '/engineering/doc.md' },
           { text: 'CHANGELOG 规范', link: '/engineering/changelog.md' },
+          { text: 'CI/CD 流程', link: '/engineering/ci-cd.md' },
         ],
       },
       {
@@ -85,6 +86,10 @@ export default defineConfig4CustomTheme({
           {
             title: 'CHANGELOG 规范',
             path: '/engineering/changelog.md',
+          },
+          {
+            title: 'CI/CD 流程',
+            path: '/engineering/ci-cd.md',
           },
         ],
       },
