@@ -173,16 +173,16 @@ importers:
         specifier: ^7.16.0
         version: 7.29.7(@babel/core@7.29.7)
       '@buildloop/commitlint-config':
-        specifier: workspace:^2.0.11
+        specifier: workspace:^2.0.12
         version: link:../commitlint-config
       '@buildloop/eslint-config':
-        specifier: workspace:^2.0.11
+        specifier: workspace:^2.0.12
         version: link:../eslint-config
       '@buildloop/markdownlint-config':
-        specifier: workspace:^2.0.11
+        specifier: workspace:^2.0.12
         version: link:../markdownlint-config
       '@buildloop/stylelint-config':
-        specifier: workspace:^2.0.11
+        specifier: workspace:^2.0.12
         version: link:../stylelint-config
       '@commitlint/cli':
         specifier: ^16.0.0
