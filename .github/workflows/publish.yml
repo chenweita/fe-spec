@@ -105,24 +105,27 @@ jobs:
           EMAIL_TO="${EMAIL_TO:-chenzehuahua@163.com}"
           SMTP_FROM="${SMTP_FROM:-$SMTP_USER}"
           PREV_VERSION=$(echo "$VERSION" | awk -F. '{print $1"."$2"."($3-1)}')
-          
           CHANGELOG_CONTENT=$(awk '/^## \[/{if(flag)exit; flag=1; next} flag' CHANGELOG.md)
           
-          python3 <<PYEOF
+          export VERSION EMAIL_TO SMTP_FROM PREV_VERSION CHANGELOG_CONTENT
+          export GITHUB_REPOSITORY="${GITHUB_REPOSITORY}"
+          
+          python3 <<'PYEOF'
           import smtplib
           from email.mime.text import MIMEText
           from email.mime.multipart import MIMEMultipart
           import os
           
-          version = "${VERSION}"
-          changelog = """${CHANGELOG_CONTENT}"""
-          repo = "${GITHUB_REPOSITORY}"
-          prev_version = "${PREV_VERSION}"
+          version = os.environ['VERSION']
+          changelog = os.environ['CHANGELOG_CONTENT']
+          repo = os.environ['GITHUB_REPOSITORY']
+          prev_version = os.environ['PREV_VERSION']
+          email_to = os.environ['EMAIL_TO']
           
           msg = MIMEMultipart('alternative')
           msg['Subject'] = f'📦 @buildloop {version} 版本发布'
           msg['From'] = os.environ['SMTP_FROM']
-          msg['To'] = '${EMAIL_TO}'
+          msg['To'] = email_to
           
           html = f"""
           <html><body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
