@@ -1,6 +1,6 @@
 {
   "name": "@buildloop/markdownlint-config",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "main": "index.json",
   "description": "前端md文档规范",
   "keywords": [

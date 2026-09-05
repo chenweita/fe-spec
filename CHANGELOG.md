@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.13](https://github.com/chenweita/fe-spec/compare/v2.0.12...v2.0.13) (2026-09-05)
+
+### Bug Fixes
+
+- use env vars for SMTP Python heredoc to prevent injection ([ee2815f](https://github.com/chenweita/fe-spec/commit/ee2815f73da43538f2430f67f9c647738440d229))
+
+### Features
+
+- add email notification after successful publish via Resend/SMTP ([c742d40](https://github.com/chenweita/fe-spec/commit/c742d4010c59b8a62756c23cb989e31d6dbe47c0))
+
 ## [2.0.12](https://github.com/chenweita/fe-spec/compare/v2.0.11...v2.0.12) (2026-09-04)
 
 **Note:** Version bump only for package @buildloop/spec

@@ -1,6 +1,6 @@
 {
   "name": "@buildloop/commitlint-config",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "main": "index.js",
   "description": "前端 Git规范",
   "keywords": [
