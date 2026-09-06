@@ -19,6 +19,36 @@ import { PKG_NAME, PKG_VERSION } from './utils/constants';
 const cwd = process.cwd();
 
 /**
+ * commander 多次使用同一选项时收集为数组
+ */
+const collect = (val: string, memo: string[]): string[] => {
+  memo.push(val);
+  return memo;
+};
+
+/**
+ * 校验 --file 与 --include 互斥，返回解析后的文件列表
+ */
+const resolveFileOptions = (files: string[], include: string | undefined): string[] => {
+  if (files.length > 0 && include) {
+    log.error('--file 和 --include 不能同时使用，请二选一');
+    process.exit(1);
+  }
+
+  if (files.length > 0) {
+    const resolved = files.map((f) => path.resolve(cwd, f));
+    const missing = resolved.filter((f) => !fs.existsSync(f));
+    if (missing.length > 0) {
+      log.error(`以下文件不存在：\n${missing.join('\n')}`);
+      process.exit(1);
+    }
+    return resolved;
+  }
+
+  return [];
+};
+
+/**
  * 若无 node_modules，则帮用户 install（否则会找不到 config）
  */
 const installDepsIfThereNo = async () => {
@@ -64,9 +94,17 @@ program
   .option('-q, --quiet', '仅报告错误信息 - 默认: false')
   .option('-o, --output-report', '输出扫描出的规范问题日志')
   .option('-i, --include <dirpath>', '指定要进行规范扫描的目录')
+  .option(
+    '-f, --file <path>',
+    '指定要扫描的文件，可多次使用指定多个文件。示例：-f src/index.ts --file src/utils.ts',
+    collect,
+    [],
+  )
   .option('--no-ignore', '忽略 eslint 的 ignore 配置文件和 ignore 规则')
   .action(async (cmd) => {
     await installDepsIfThereNo();
+
+    const files = resolveFileOptions(cmd.file, cmd.include);
 
     const checking = ora();
     checking.start(`执行 ${PKG_NAME} 代码检查`);
@@ -74,7 +112,8 @@ program
     const { results, errorCount, warningCount, runErrors } = await scan({
       cwd,
       fix: false,
-      include: cmd.include || cwd,
+      include: files.length === 0 ? cmd.include || cwd : '',
+      files: files.length > 0 ? files : undefined,
       quiet: Boolean(cmd.quiet),
       outputReport: Boolean(cmd.outputReport),
       ignore: cmd.ignore, // 对应 --no-ignore
@@ -138,9 +177,17 @@ program
   .command('fix')
   .description('一键修复：自动修复项目的代码规范扫描问题')
   .option('-i, --include <dirpath>', '指定要进行修复扫描的目录')
+  .option(
+    '-f, --file <path>',
+    '指定要修复的文件，可多次使用指定多个文件。示例：-f src/index.ts --file src/utils.ts',
+    collect,
+    [],
+  )
   .option('--no-ignore', '忽略 eslint 的 ignore 配置文件和 ignore 规则')
   .action(async (cmd) => {
     await installDepsIfThereNo();
+
+    const files = resolveFileOptions(cmd.file, cmd.include);
 
     const checking = ora();
     checking.start(`执行 ${PKG_NAME} 代码修复`);
@@ -148,7 +195,8 @@ program
     const { results } = await scan({
       cwd,
       fix: true,
-      include: cmd.include || cwd,
+      include: files.length === 0 ? cmd.include || cwd : '',
+      files: files.length > 0 ? files : undefined,
       ignore: cmd.ignore, // 对应 --no-ignore
     });
 
